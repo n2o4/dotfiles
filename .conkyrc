@@ -6,4 +6,4 @@ total_run_times 0
 use_spacer none
 
 TEXT
-Battery: ${execi 10 ~/scripts/battery.py} :: MPD: ${if_match "${mpd_status}" =="Playing"}$mpd_smart $else${mpd_status}$endif :: ${cpu cpu1}%  :: ${acpitemp}C :: $memperc% ($mem) :: ${time %a %d %b %H:%M:%S}
+Battery: ${execi 10 ~/scripts/battery.py} :: MPD: ${if_match "${mpd_status}" =="Playing"}$mpd_smart $else${mpd_status}$endif :: ${cpu cpu1}% :: ${acpitemp}C :: $memperc% ($mem) :: ${time %a %d %b %H:%M:%S}
