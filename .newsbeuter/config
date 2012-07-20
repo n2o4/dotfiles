@@ -4,7 +4,7 @@ refresh-on-startup yes
 always-display-description true
 auto-reload yes
 reload-time 30
-browser x-www-browser
+browser dwb
 error-log "~/.newsbeuter/error.log"
 #include "~/.newsbeuter/googlereader.config"
 max-items 500
