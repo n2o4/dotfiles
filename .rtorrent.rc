@@ -1,0 +1,32 @@
+min_peers = 20
+max_peers = 100
+
+min_peers_seed = 10
+max_peers_seed = 30
+
+max_uploads = 3
+max_uploads_global = 7
+
+directory = /home/n2o4/rtorrent/work
+
+session =  /home/n2o4/rtorrent/.session/
+
+schedule = watch_directory_1,10,10,"load_start=/home/n2o4/rtorrent/watch/*.torrent,d.set_custom1=/home/n2o4/rtorrent/done/"
+schedule = watch_directory_2,10,10,"load_start=/home/n2o4/rtorrent/watch/music/*.torrent,d.set_custom1=/home/n2o4/rtorrent/done/music/"
+schedule = watch_directory_3,10,10,"load_start=/home/n2o4/rtorrent/watch/movies/*.torrent,d.set_custom1=/home/n2o4/rtorrent/done/movies/"
+schedule = watch_directory_4,10,10,"load_start=/home/n2o4/rtorrent/watch/misc/*.torrent,d.set_custom1=/home/n2o4/rtorrent/done/misc/"
+schedule = watch_directory_5,10,10,"load_start=/home/n2o4/rtorrent/watch/programs/*.torrent,d.set_custom1=/home/n2o4/rtorrent/done/programs/"
+schedule = watch_directory_6,10,10,"load_start=/home/n2o4/rtorrent/watch/tv/*.torrent,d.set_custom1=/home/n2o4/rtorrent/done/tv/"
+
+# On completion, move the torrent to the directory from custom1.
+system.method.set_key =event.download.finished,move_complete,"d.set_directory=$d.get_custom1= ;execute=mv,-u,$d.get_base_path=,$d.get_custom1="
+
+port_range = 9240-9240
+
+check_hash = yes
+
+encryption = allow_incoming,try_outgoing,enable_retry
+
+dht = disable
+
+peer_exchange = no
