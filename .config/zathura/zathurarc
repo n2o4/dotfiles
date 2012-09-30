@@ -1,8 +1,6 @@
-# Zathura-settings 07.03.2012
 set adjust-open width
 set page-padding 5
 
-# Keyboard shortcuts
 map <PageUp> navigate previous
 map <PageDown> navigate next
 
@@ -11,6 +9,8 @@ map - zoom out
 
 map <F1> set "pages-per-row 1"
 map <F2> set "pages-per-row 2"
+map <F3> set adjust_window best-fit
+map <F4> adjust_window width
 map b toggle_statusbar
 
 map <C-f> toggle_fullscreen
