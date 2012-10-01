@@ -4,9 +4,8 @@ refresh-on-startup yes
 always-display-description true
 auto-reload yes
 reload-time 30
-browser dwb
+browser nlinks
 error-log "~/.newsbeuter/error.log"
-#include "~/.newsbeuter/googlereader.config"
 max-items 500
 goto-next-feed no
 
@@ -15,6 +14,7 @@ notify-xterm yes
 show-read-feeds no
 show-read-articles no
 
+# Keybindings go here
 # Vim-like navigation
 bind-key j down
 bind-key k up
@@ -23,7 +23,7 @@ bind-key l right
 
 bind-key m toggle-show-read-feeds
 
-# color theme
+# n2o4 color theme
 color   background  default default
 color   listnormal  blue    default bold
 color   listfocus   green   default bold
