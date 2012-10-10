@@ -1,0 +1,8 @@
+softvol=1
+softvol-max=600
+heartbeat-cmd="xscreensaver-command -deactivate"
+
+sub-fuzziness=1
+subfont-autoscale=1
+subfont-osd-scale=2
+subfont-text-scale=6
