@@ -76,7 +76,7 @@ nnoremap <leader><space> :noh<cr>   " Clear highlighted searches with <leader><s
 "vnoremap <tab> %                    " .. easier to type than %.
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>  " Open .vimrc in a vertical split
 
-" Tab mappings.
+" Tab mappings {
 map <leader>tt :tabnew<cr>
 map <leader>te :tabedit
 map <leader>tc :tabclose<cr>
@@ -86,8 +86,18 @@ map <leader>tp :tabprevious<cr>
 map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
+" }
 
-" Toggle between relative and absolute line numbers
+" Mappings for fugitive-plugin {
+nnoremap <silent> <leader>gs :Gstatus<cr>
+nnoremap <silent> <leader>gd :Gdiff<cr>
+nnoremap <silent> <leader>gc :Gcommit<cr>
+nnoremap <silent> <leader>gb :Gblame<cr>
+nnoremap <silent> <leader>gl :Glog<cr>
+nnoremap <silent> <leader>gp :Git push<cr>
+" }
+
+" Toggle between relative and absolute line numbers {
 function! g:ToggleNuMode()
     if(&rnu == 1)
         set nu
@@ -97,3 +107,4 @@ function! g:ToggleNuMode()
 endfunc
 
 nnoremap <f5> :call g:ToggleNuMode()<cr>
+" }
