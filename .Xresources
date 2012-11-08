@@ -1,37 +1,38 @@
+
 URxvt*transparent: false
-URxvt*shading: 5 # 0-99 to darken, 101-200 to lighten
+URxvt*shading: 5 # 0 to 99 darkens, 101 to 200 lightens
 
 URxvt.scrollBar: off
-URxvt.font: xft:ProggyCleanTT:size=12
+URxvt.font: xft:Terminus:pixelsize=8
 URxvt.perl-ext-common:  default,matcher
-URxvt.urlLauncher:      /usr/bin/dwb
+URxvt.urlLauncher:      /usr/bin/x-www-browser
 URxvt.matcher.button:   1 
 URxvt.perl-ext:      default,url-select
 URxvt.keysym.M-u:    perl:url-select:select_next
 URxvt.underlineURLs: true
 
-URxvt.foreground: #dcdccc
-URxvt*background: #3f3f3f
+URxvt.foreground:       #dcdccc
+URxvt*background:       #3f3f3f
 
-URxvt*colorUL: #c5f779
-URxvt*underlineColor: #c5f779
+URxvt*colorUL:          #c5f779
+URxvt*underlineColor:   #c5f779
 
-URxvt*color0:	#3f3f3f
-URxvt*color1:       #705050
-URxvt*color2:     #60b48a
-URxvt*color3:    #dfaf8f
-URxvt*color4:      #506070
-URxvt*color5:   #dc8cc3
-URxvt*color6:      #8cd0d3
-URxvt*color7:     #DCDCCC
+URxvt*color0:	        #3f3f3f
+URxvt*color1:           #705050
+URxvt*color2:           #60b48a
+URxvt*color3:           #dfaf8f
+URxvt*color4:           #506070
+URxvt*color5:           #dc8cc3
+URxvt*color6:           #8cd0d3
+URxvt*color7:           #DCDCCC
 
-URxvt*color8:      #709080
-URxvt*color9:      #cc9393
-URxvt*color10:    #7f9f7f
-URxvt*color11:   #f0dfaf
-URxvt*color12:     #94bff3
-URxvt*color13:  #ec93d3
-URxvt*color14:    #93e0e3
+URxvt*color8:           #709080
+URxvt*color9:           #cc9393
+URxvt*color10:          #7f9f7f
+URxvt*color11:          #f0dfaf
+URxvt*color12:          #94bff3
+URxvt*color13:          #ec93d3
+URxvt*color14:          #93e0e3
 URxvt*color15:          #ffffff
 
 !black
@@ -58,29 +59,3 @@ xterm*color14:        #F0E68C
 !white
 xterm*color7:         #DDDDDD
 xterm*color15:        #FFFFFF
-
-!font settings
-xscreensaver.Dialog.headingFont:        -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
-xscreensaver.Dialog.bodyFont:           -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
-xscreensaver.Dialog.labelFont:          -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
-xscreensaver.Dialog.unameFont:          -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
-xscreensaver.Dialog.buttonFont:         -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
-xscreensaver.Dialog.dateFont:           -*-fixed-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.passwd.passwdFont:         -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
-!general dialog box (affects main hostname, username, password text)
-xscreensaver.Dialog.foreground:         #101010
-xscreensaver.Dialog.background:         #D8D8D8
-xscreensaver.Dialog.topShadowColor:     #D8D8D8
-xscreensaver.Dialog.bottomShadowColor:  #D8D8D8
-xscreensaver.Dialog.Button.foreground:  #101010
-xscreensaver.Dialog.Button.background:  #E5E5E5
-!username/password input box and date text colour
-xscreensaver.Dialog.text.foreground:    #101010
-xscreensaver.Dialog.text.background:    #E5E5E5
-xscreensaver.Dialog.internalBorderWidth:24
-xscreensaver.Dialog.borderWidth:        20
-xscreensaver.Dialog.shadowThickness:    2
-!timeout bar (background is actually determined by Dialog.text.background)
-xscreensaver.passwd.thermometer.foreground:  #101010
-xscreensaver.passwd.thermometer.background:  #2E2E2E
-xscreensaver.passwd.thermometer.width:       8
