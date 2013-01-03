@@ -1,61 +1,83 @@
+URxvt*transparent:              false
+URxvt*shading:                  5 # 0 to 99 darkens, 101 to 200 lighten
 
-URxvt*transparent: false
-URxvt*shading: 5 # 0 to 99 darkens, 101 to 200 lightens
+URxvt.scrollBar:                off
+!URxvt.font:                    xft:ProggyCleanTT:size=12
+URxvt.font:                     xft:Terminus:pixelsize=8
+URxvt.perl-ext-common:          default,matcher
+URxvt.urlLauncher:              /usr/bin/x-www-browser
+URxvt.matcher.button:           1
+URxvt.perl-ext:                 default,url-select
+URxvt.keysym.M-u:               perl:url-select:select_next
+URxvt.underlineURLs:            true
 
-URxvt.scrollBar: off
-URxvt.font: xft:Terminus:pixelsize=8
-URxvt.perl-ext-common:  default,matcher
-URxvt.urlLauncher:      /usr/bin/x-www-browser
-URxvt.matcher.button:   1 
-URxvt.perl-ext:      default,url-select
-URxvt.keysym.M-u:    perl:url-select:select_next
-URxvt.underlineURLs: true
+! Colours for hybrid.vim (copied from Tomorrow-Night)
+#define t_background #1d1f21
+#define t_current_line #282a2e
+#define t_selection #373b41
+#define t_foreground #c5c8c6
+#define t_comment #969896
+#define t_red #cc6666
+#define t_orange #de935f
+#define t_yellow #f0c674
+#define t_green #b5bd68
+#define t_aqua #8abeb7
+#define t_blue #81a2be
+#define t_purple #b294bb
 
-URxvt.foreground:       #dcdccc
-URxvt*background:       #3f3f3f
+! terminal colours
+URxvt*background:               t_background
+URxvt*foreground:               t_comment
+! black
+URxvt*color0:                   t_current_line
+URxvt*color8:                   t_selection
+! red
+URxvt*color1:                   #A54242
+URxvt*color9:                   t_red
+! green
+URxvt*color2:                   #8C9440
+URxvt*color10:                  t_green
+! yellow
+URxvt*color3:                   t_orange
+URxvt*color11:                  t_yellow
+! blue
+URxvt*color4:                   #5F819D
+URxvt*color12:                  t_blue
+! magenta
+URxvt*color5:                   #85678F
+URxvt*color13:                  t_purple
+! cyan
+URxvt*color6:                   #5E8D87
+URxvt*color14:                  t_aqua
+! white
+URxvt*color7:                   t_comment
+URxvt*color15:                  t_foreground
 
-URxvt*colorUL:          #c5f779
-URxvt*underlineColor:   #c5f779
 
-URxvt*color0:	        #3f3f3f
-URxvt*color1:           #705050
-URxvt*color2:           #60b48a
-URxvt*color3:           #dfaf8f
-URxvt*color4:           #506070
-URxvt*color5:           #dc8cc3
-URxvt*color6:           #8cd0d3
-URxvt*color7:           #DCDCCC
-
-URxvt*color8:           #709080
-URxvt*color9:           #cc9393
-URxvt*color10:          #7f9f7f
-URxvt*color11:          #f0dfaf
-URxvt*color12:          #94bff3
-URxvt*color13:          #ec93d3
-URxvt*color14:          #93e0e3
-URxvt*color15:          #ffffff
+xterm*foreground:               t_comment
+xterm*background:               t_background
 
 !black
-xterm*color0:         #353535
-xterm*color8:         #666666
+xterm*color0:                   t_current_line
+xterm*color8:                   t_selection
 !red
-xterm*color1:         #AE4747
-xterm*color9:         #EE6363
+xterm*color1:                   #A54242
+xterm*color9:                   t_red
 !green
-xterm*color2:         #556B2F
-xterm*color10:        #9ACD32
+xterm*color2:                   #8C9440
+xterm*color10:                  t_green
 !brown/yellow
-xterm*color3:         #DAA520
-xterm*color11:        #FFC125
+xterm*color3:                   t_orange
+xterm*color11:                  t_yellow
 !blue
-xterm*color4:         #6F99B4
-xterm*color12:        #7C96B0
+xterm*color4:                   #5F819D
+xterm*color12:                  t_blue
 !magenta
-xterm*color5:         #8B7B8B
-xterm*color13:        #D8BFD8
+xterm*color5:                   #85678F
+xterm*color13:                  t_purple
 !cyan
-xterm*color6:         #A7A15E
-xterm*color14:        #F0E68C
+xterm*color6:                   #5E8D87
+xterm*color14:                  t_aqua
 !white
-xterm*color7:         #DDDDDD
-xterm*color15:        #FFFFFF
+xterm*color7:                   t_comment
+xterm*color15:                  t_foreground
