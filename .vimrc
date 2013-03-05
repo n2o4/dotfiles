@@ -1,23 +1,34 @@
 
-imap jj <Esc>
-
-" -v-1 Plugin-manager
-" ------------------------------------------------------------------------
-    call pathogen#infect()
-    syntax on                                       " Set syntax highlighting on
-    call pathogen#helptags()
-    filetype plugin indent on                       " Set type of file
-
-  " -v-2 Vim powerline
-  " ----------------------------------------------------------------------
-      let g:Powerline_symbols = 'unicode'
-
-" -v-1 Important
+" -v-1 Startup
 " ------------------------------------------------------------------------
     set nocompatible                                " No vi-compatibility
+    filetype off
+
+" -v-1 Vundle
+" ------------------------------------------------------------------------
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+    " let Vundle manage Vundle
+    " required! 
+    Bundle 'gmarik/vundle'
+
+  " -v-2 My bundles
+  " ----------------------------------------------------------------------
+      Bundle 'tpope/vim-fugitive'
+      Bundle 'gregsexton/gitv'
+      Bundle 'jamessan/vim-gnupg'
+      Bundle 'zeekay/vim-lawrencium'
+      Bundle 'Lokaltog/vim-powerline'
+
+      filetype plugin indent on                       " Set type of file
+
+    " -v-3 Vim powerline
+    " ----------------------------------------------------------------------
+        let g:Powerline_symbols = 'unicode'
 
 " -v-1 Moving around, searching and patterns
 " ------------------------------------------------------------------------
+    imap jj <Esc>
     set autochdir                                   " Change to directory of file in buffer
     set incsearch                                   " Show match for party typed search command
     set ignorecase                                  " Ignore case when using a search pattern
@@ -25,6 +36,7 @@ imap jj <Esc>
 
 " -v-1 Displaying text
 " ------------------------------------------------------------------------
+    syntax on                                       " Set syntax highlighting on
     set nowrap                                      " Long lines don't wrap
     set listchars=tab:▸\ ,eol:¬                     " List of strings used for list mode
     set relativenumber                              " Show relaitve line number for each line
