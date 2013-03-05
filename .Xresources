@@ -1,11 +1,10 @@
 URxvt*transparent:              false
-URxvt*shading:                  5 # 0 to 99 darkens, 101 to 200 lighten
+URxvt*shading:                  5
 
 URxvt.scrollBar:                off
-!URxvt.font:                    xft:ProggyCleanTT:size=12
 URxvt.font:                     xft:Terminus:pixelsize=8
 URxvt.perl-ext-common:          default,matcher
-URxvt.urlLauncher:              /usr/bin/x-www-browser
+URxvt.urlLauncher:              /usr/bin/dwb
 URxvt.matcher.button:           1
 URxvt.perl-ext:                 default,url-select
 URxvt.keysym.M-u:               perl:url-select:select_next
@@ -53,6 +52,8 @@ URxvt*color14:                  t_aqua
 URxvt*color7:                   t_comment
 URxvt*color15:                  t_foreground
 
+URxvt.colorUL:                  #86a2be
+URxvt.underlineColor:           #3465A4
 
 xterm*foreground:               t_comment
 xterm*background:               t_background
