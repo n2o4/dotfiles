@@ -120,7 +120,8 @@
   " ----------------------------------------------------------------------
     " -v-3 Leader key settings
     " --------------------------------------------------------------------
-      let mapleader = ","                           " Assign , as mapkey instead of the slower \
+      "let mapleader = ","                           " Assign , as mapkey instead of the slower \
+      let mapleader = "\<space>"
 
     " -v-3 Personal mappings
     " --------------------------------------------------------------------
