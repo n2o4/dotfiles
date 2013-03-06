@@ -51,8 +51,8 @@
 
     " -v-2 Appearance
     " --------------------------------------------------------------------
-    let g:hybrid_use_Xresources = 1
-    colorscheme hybrid
+      let g:hybrid_use_Xresources = 1
+      colorscheme hybrid
 
 " -v-1 Multiple windows
 " ------------------------------------------------------------------------
