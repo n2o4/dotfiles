@@ -70,6 +70,7 @@
 " ------------------------------------------------------------------------
     set laststatus=2                            " When to use a status line for the last window
     set statusline=%(%F%m%r%h%w\%)%=%([TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]%)
+    set hidden                                  " Don't unload a buffer when no longer shown in a window.
     set splitbelow                              " Open new windows under the current one ..
     set splitright                              " .. or to the right of the current one.
 
@@ -115,6 +116,7 @@
 
 " -v-1 Command line editing
 " ------------------------------------------------------------------------
+    set history=250                             " How many command lines are remembered
     set wildmode=longest:list,full              " Specifies how command line completion works
     set wildmenu                                " Command-line completion shows a list of matches 
 
