@@ -91,7 +91,7 @@
     set tabstop=4                                   " Number of spaces a <Tab> in the text stands for
     set shiftwidth=4                                " Number of spaces used for each step of (auto)indent
     set shiftround                                  " Round to 'shiftwidth' for '<<' and '>>'
-    set expandtab                                   " Expand <Tab> to spaces in insert mode
+    "set expandtab                                   " Expand <Tab> to spaces in insert mode
 
 " -v-1 Reading and writing files
 " ------------------------------------------------------------------------
