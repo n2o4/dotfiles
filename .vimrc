@@ -19,12 +19,23 @@
       Bundle 'jamessan/vim-gnupg'
       Bundle 'zeekay/vim-lawrencium'
       Bundle 'Lokaltog/vim-powerline'
+      Bundle 'mhinz/vim-signify'
 
       filetype plugin indent on                 " Set type of file
 
     " -v-3 Vim powerline
-    " ----------------------------------------------------------------------
+    " --------------------------------------------------------------------
         let g:Powerline_symbols = 'unicode'
+
+    " -v-3 Vim-signify
+    " --------------------------------------------------------------------
+        let g:signify_sign_overwrite = 1
+
+        let g:signify_mapping_next_hunk = '<leader>gn'
+        let g:signify_mapping_prev_hunk = '<leader>gp'
+
+        let g:signify_mapping_toggle_higlight = '<leader>gh'
+        let g:signify_mapping_toggle = '<leader>gt'
 
 " -v-1 Moving around, searching and patterns
 " ------------------------------------------------------------------------
@@ -164,7 +175,7 @@
       nnoremap <silent> <leader>gc :Gcommit<cr>
       nnoremap <silent> <leader>gb :Gblame<cr>
       nnoremap <silent> <leader>gl :Glog<cr>
-      nnoremap <silent> <leader>gp :Git push<cr>
+      "nnoremap <silent> <leader>gp :Git push<cr>
 
   " -v-2 Auto-commands
   " ----------------------------------------------------------------------
