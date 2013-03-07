@@ -45,6 +45,7 @@
 " -v-1 Syntax, highlighting and spelling
 " ------------------------------------------------------------------------
     "set background=dark                            " Set background color
+    set hlsearch                                    " Highlight all matches for the last used search pattern
     set cursorcolumn                                " Highlight the column of the cursor
     set cursorline                                  " Highlight the line of the cursor
     set colorcolumn=80                              " Highlight the 80th character
@@ -142,7 +143,7 @@
 
       nnoremap / /\v
       vnoremap / /\v
-      nnoremap <leader><space> :noh<cr>             " Clear highlighted searches with <leader><space>
+      nnoremap <leader>cls :noh<cr>             " Clear highlighted searches with <leader>cls
 
     " -v-3 Tab mappings
     " --------------------------------------------------------------------
