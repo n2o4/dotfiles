@@ -20,6 +20,8 @@
       Bundle 'zeekay/vim-lawrencium'
       Bundle 'Lokaltog/vim-powerline'
       Bundle 'mhinz/vim-signify'
+      Bundle 'mattn/webapi-vim'
+      Bundle 'mattn/gist-vim'
 
       filetype plugin indent on                 " Set type of file
 
@@ -36,6 +38,14 @@
 
         let g:signify_mapping_toggle_higlight = '<leader>gh'
         let g:signify_mapping_toggle = '<leader>gt'
+
+    " -v-3 gist-vim
+    " --------------------------------------------------------------------
+        let g:gist_detect_filetype = 1
+        let g:gist_open_browser_after_post = 1
+        let g:gist_browser_command = 'dwb %URL% &'
+        let g:gist_show_privates = 1
+        let g:gist_post_private = 1
 
 " -v-1 Moving around, searching and patterns
 " ------------------------------------------------------------------------
@@ -81,6 +91,7 @@
 " -v-1 Using the mouse
 " ------------------------------------------------------------------------
     set mouse=a                                 " List of flags for using the mouse
+    set mousehide                               " Hide the mouse pointer while typing
 
 " -v-1 Messages and info
 " ------------------------------------------------------------------------
