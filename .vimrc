@@ -173,6 +173,11 @@
       vnoremap / /\v
       nnoremap <leader>cls :noh<cr>             " Clear highlighted searches with <leader>cls
 
+      nnoremap <C-j> <C-w>j                     " Easily navigate panes with ctrl-direction
+      nnoremap <C-k> <C-w>k
+      nnoremap <C-h> <C-w>h
+      nnoremap <C-l> <C-w>l
+
     " -v-3 Tab mappings
     " --------------------------------------------------------------------
       map <leader>tt :tabnew<cr>
