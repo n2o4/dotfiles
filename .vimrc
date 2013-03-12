@@ -80,6 +80,10 @@
 " ------------------------------------------------------------------------
     set laststatus=2                            " When to use a status line for the last window
     set statusline=%(%F%m%r%h%w\%)%=%([TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]%)
+      set winwidth=84                             " Basically, all non-focused windows shrink down to ..
+      set winheight=5                             " .. five lines and the focused window takes up ..
+      set winminheight=5                          " .. everything that's left (so the focused window ..
+      set winheight=999                           " .. has at least 84 columns, the others shrink to accomodate).
     set hidden                                  " Don't unload a buffer when no longer shown in a window.
     set splitbelow                              " Open new windows under the current one ..
     set splitright                              " .. or to the right of the current one.
@@ -219,5 +223,13 @@
         endif
         echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
       endfunc
+
+    " -v-3 Only highlight the current line and 80th column of the currently active window
+    " --------------------------------------------------------------------
+      augroup BgHghlight
+        autocmd!
+        autocmd WinEnter * set cul colorcolumn=80
+        autocmd WinLeave * set nocul colorcolumn=0
+      augroup END
 
 " vim: set fmr=-v-,-^- fdm=marker cms="%s" et ts=2 sw=2 sts=2 :
