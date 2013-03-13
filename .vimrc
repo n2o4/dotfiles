@@ -199,6 +199,26 @@
       nnoremap <silent> <leader>gl :Glog<cr>
       "nnoremap <silent> <leader>gp :Git push<cr>
 
+    " -v-3 dmenu file searching
+    " http://leafo.net/posts/using_dmenu_to_open_quickly.html
+    " --------------------------------------------------------------------
+      " Strip the newline from the end of a string
+      function! Chomp(str)
+        return substitute(a:str, '\n$', '', '')
+      endfunction
+
+      " Find a file and pass it to cmd
+      function! DmenuOpen(cmd)
+        let fname = Chomp(system("git ls-files | dmenu -i -l 20 -p " . a:cmd))
+        if empty(fname)
+          return
+        endif
+        execute a:cmd . " " . fname
+      endfunction
+
+      map <c-t> :call DmenuOpen("tabe")<cr>
+      map <c-f> :call DmenuOpen("e")<cr>
+
   " -v-2 Auto-commands
   " ----------------------------------------------------------------------
     " -v-3 Source .vimrc after saving it
