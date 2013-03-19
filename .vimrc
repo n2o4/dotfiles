@@ -3,6 +3,10 @@
     set nocompatible                            " No vi-compatibility
     filetype off
 
+    " -v-3 Leader key settings
+    " --------------------------------------------------------------------
+      let mapleader = "\<space>"
+      "
 " -v-1 Vundle
 " ------------------------------------------------------------------------
     set rtp+=~/.vim/bundle/vundle/
@@ -99,7 +103,7 @@
 
 " -v-1 Messages and info
 " ------------------------------------------------------------------------
-    set shortmess+=I                            " List of flags to make messages shorter
+    set shortmess+=Ia                           " List of flags to make messages shorter
     set showcmd                                 " Show (partial) command keys in the status line
     set ruler                                   " Show cursor position below each window
     set confirm                                 " Start a dialog when a command fails
@@ -148,9 +152,6 @@
 " ------------------------------------------------------------------------
   " -v-2 Mappings
   " ----------------------------------------------------------------------
-    " -v-3 Leader key settings
-    " --------------------------------------------------------------------
-      let mapleader = "\<space>"
 
     " -v-3 Personal mappings
     " --------------------------------------------------------------------
@@ -190,12 +191,29 @@
 
     " -v-3 Mappings for the fugitive-plugin
     " --------------------------------------------------------------------
-      nnoremap <silent> <leader>gs :Gstatus<cr>
-      nnoremap <silent> <leader>gd :Gdiff<cr>
-      nnoremap <silent> <leader>gc :Gcommit<cr>
-      nnoremap <silent> <leader>gb :Gblame<cr>
-      nnoremap <silent> <leader>gl :Glog<cr>
-      "nnoremap <silent> <leader>gp :Git push<cr>
+      nnoremap <leader>gs :Gstatus<cr>
+      nnoremap <leader>gr :Gremove<cr>
+      nnoremap <leader>gl :Glog<cr>
+      nnoremap <leader>gb :Gblame<cr>
+      nnoremap <leader>gm :Gmove<cr>
+      nnoremap <leader>gp :Ggrep<cr>
+      nnoremap <leader>gR :Gread<cr>
+      nnoremap <leader>gd :Gdiff<cr>
+      nnoremap <leader>gc :Gcommit<cr>
+      nnoremap <leader>gP :Git push<cr>
+      nnoremap <leader>ge :Gedit<cr>
+      nnoremap <leader>gg :Git
+
+    " -v-3 Quickfix-bindings
+    " --------------------------------------------------------------------
+      nnoremap <leader>co :copen<cr>
+      nnoremap <leader>cc :cc 
+      nnoremap <leader>cw :cwindow<cr>
+      nnoremap <leader>cp :cprev<cr>
+      nnoremap <leader>cn :cnext<cr>
+      nnoremap <leader>cf :cfirst<cr>
+      nnoremap <leader>cl :clast<cr>
+      nnoremap <leader>CC :cclose<cr>
 
     " -v-3 dmenu file searching
     " http://leafo.net/posts/using_dmenu_to_open_quickly.html
