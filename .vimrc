@@ -1,8 +1,12 @@
-
 " -v-1 Startup
 " ------------------------------------------------------------------------
     set nocompatible                            " No vi-compatibility
     filetype off
+
+  " -v-2 Leader key settings
+  " --------------------------------------------------------------------
+    "let mapleader = ","                      " Assign , as mapkey instead of the slower \
+    let mapleader = "\<space>"
 
 " -v-1 Vundle
 " ------------------------------------------------------------------------
@@ -22,6 +26,7 @@
       Bundle 'mhinz/vim-signify'
       Bundle 'mattn/webapi-vim'
       Bundle 'mattn/gist-vim'
+      Bundle 'kana/vim-smartinput'
 
       filetype plugin indent on                 " Set type of file
 
@@ -102,6 +107,7 @@
     set shortmess+=I                            " List of flags to make messages shorter
     set showcmd                                 " Show (partial) command keys in the status line
     set ruler                                   " Show cursor position below each window
+    set confirm                                 " Start a dialog when a command fails
     set noerrorbells                            " No ringing the bell for error messages
     set novisualbell                            " No visual bell instead of beeping either
 
@@ -147,18 +153,17 @@
 " ------------------------------------------------------------------------
   " -v-2 Mappings
   " ----------------------------------------------------------------------
-    " -v-3 Leader key settings
-    " --------------------------------------------------------------------
-      "let mapleader = ","                      " Assign , as mapkey instead of the slower \
-      let mapleader = "\<space>"
 
     " -v-3 Personal mappings
     " --------------------------------------------------------------------
-      nmap <leader>l :set list!<cr>             " Quickly toggle 'set list'
-      au FileType help nmap <buffer> <CR> <C-]> " Navigate Vim's help with <Enter>
+      " Quickly toggle 'set list'
+      nmap <leader>l :set list!<cr>
+
+      " Navigate Vim's help with <Enter>
+      au FileType help nmap <buffer> <CR> <C-]> 
 
       cmap w!! w !sudo tee >/dev/null %
-      nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>  " Open .vimrc in a vertical split
+      nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
       nnoremap <leader>cv <C-w><C-v><C-l>:e ~/.cheatvim.mkd<cr>
 
     " -v-3 Navigation remaps
@@ -171,12 +176,7 @@
 
       nnoremap / /\v
       vnoremap / /\v
-      nnoremap <leader>cls :noh<cr>             " Clear highlighted searches with <leader>cls
-
-      nnoremap <C-j> <C-w>j                     " Easily navigate panes with ctrl-direction
-      nnoremap <C-k> <C-w>k
-      nnoremap <C-h> <C-w>h
-      nnoremap <C-l> <C-w>l
+      nnoremap <silent> <Esc> :noh<CR><Esc>
 
     " -v-3 Tab mappings
     " --------------------------------------------------------------------
@@ -216,8 +216,8 @@
         execute a:cmd . " " . fname
       endfunction
 
-      map <c-t> :call DmenuOpen("tabe")<cr>
-      map <c-f> :call DmenuOpen("e")<cr>
+      map <leader>dt :call DmenuOpen("tabe")<cr>
+      map <leader>de :call DmenuOpen("e")<cr>
 
   " -v-2 Auto-commands
   " ----------------------------------------------------------------------
@@ -239,15 +239,6 @@
 
       nnoremap <f5> :call g:ToggleNuMode()<cr>
 
-    " -v-3 Show syntax highlight group with <ctrl>+<shift>+p
-    " --------------------------------------------------------------------
-      nmap <C-S-P> :call <SID>SynStack()<CR>
-      function! <SID>SynStack()
-        if !exists("*synstack")
-          return
-        endif
-        echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-      endfunc
 
     " -v-3 Only highlight the current line and 80th column of the currently active window
     " --------------------------------------------------------------------
