@@ -202,7 +202,7 @@
       nnoremap <leader>gc :Gcommit<cr>
       nnoremap <leader>gP :Git push<cr>
       nnoremap <leader>ge :Gedit<cr>
-      nnoremap <leader>gg :Git
+      nnoremap <leader>gg :Git 
 
     " -v-3 Quickfix-bindings
     " --------------------------------------------------------------------
@@ -263,5 +263,9 @@
         autocmd WinEnter * set cul colorcolumn=80
         autocmd WinLeave * set nocul colorcolumn=0
       augroup END
+
+    " -v-3 Auto-clean fugitive buffers
+    " --------------------------------------------------------------------
+      autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " vim: set fmr=-v-,-^- fdm=marker cms="%s" et ts=2 sw=2 sts=2 :
