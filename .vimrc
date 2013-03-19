@@ -1,3 +1,4 @@
+
 " -v-1 Startup
 " ------------------------------------------------------------------------
     set nocompatible                            " No vi-compatibility
@@ -18,6 +19,7 @@
   " -v-2 My bundles
   " ----------------------------------------------------------------------
       Bundle 'tpope/vim-fugitive'
+      Bundle 'tpope/vim-unimpaired'
       Bundle 'gregsexton/gitv'
       Bundle 'jamessan/vim-gnupg'
       Bundle 'zeekay/vim-lawrencium'
@@ -164,6 +166,11 @@
       cmap w!! w !sudo tee >/dev/null %
       nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
       nnoremap <leader>cv <C-w><C-v><C-l>:e ~/.cheatvim.mkd<cr>
+
+      map ö [
+      map ä ]
+      map Ö {
+      map Ä }
 
     " -v-3 Navigation remaps
     " --------------------------------------------------------------------
