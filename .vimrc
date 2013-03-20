@@ -66,7 +66,7 @@
     "set background=dark                        " Set background color
     set hlsearch                                " Highlight all matches for the last used search pattern
     set cursorcolumn                            " Highlight the column of the cursor
-    set cursorline                              " Highlight the line of the cursor
+    set nocursorline                            " Highlight the line of the cursor
     set colorcolumn=80                          " Highlight the 80th character
 
     " -v-2 Appearance
@@ -252,13 +252,18 @@
 
       nnoremap <f5> :call g:ToggleNuMode()<cr>
 
-    " -v-3 Only highlight the current line and 80th column of the currently active window
+    " -v-3 Only highlight the 80th column of the currently active window
     " --------------------------------------------------------------------
       augroup BgHghlight
         autocmd!
-        autocmd WinEnter * set cul colorcolumn=80
-        autocmd WinLeave * set nocul colorcolumn=0
+        autocmd WinEnter * set colorcolumn=80
+        autocmd WinLeave * set colorcolumn=0
       augroup END
+
+    " -v-3 Only highlight the cursorline when in insert mode
+    " --------------------------------------------------------------------
+      au InsertEnter * set cursorline
+      au InsertLeave * set nocursorline
 
     " -v-3 Auto-clean fugitive buffers
     " --------------------------------------------------------------------
