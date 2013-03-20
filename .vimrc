@@ -4,10 +4,6 @@
     set nocompatible                            " No vi-compatibility
     filetype off
 
-    " -v-3 Leader key settings
-    " --------------------------------------------------------------------
-      let mapleader = "\<space>"
-      "
 " -v-1 Vundle
 " ------------------------------------------------------------------------
     set rtp+=~/.vim/bundle/vundle/
@@ -23,17 +19,12 @@
       Bundle 'gregsexton/gitv'
       Bundle 'jamessan/vim-gnupg'
       Bundle 'zeekay/vim-lawrencium'
-      Bundle 'Lokaltog/vim-powerline'
       Bundle 'mhinz/vim-signify'
       Bundle 'mattn/webapi-vim'
       Bundle 'mattn/gist-vim'
       Bundle 'kana/vim-smartinput'
 
       filetype plugin indent on                 " Set type of file
-
-    " -v-3 Vim powerline
-    " --------------------------------------------------------------------
-        let g:Powerline_symbols = 'unicode'
 
     " -v-3 Vim-signify
     " --------------------------------------------------------------------
@@ -65,6 +56,7 @@
 " ------------------------------------------------------------------------
     syntax on                                   " Set syntax highlighting on
     set nowrap                                  " Long lines don't wrap
+    set fillchars=vert:\|,fold:-
     set listchars=tab:▸\ ,eol:¬                 " List of strings used for list mode
     set relativenumber                          " Show relaitve line number for each line
     set numberwidth=5                           " Number of colums to use for the line number
@@ -84,11 +76,12 @@
 
 " -v-1 Multiple windows
 " ------------------------------------------------------------------------
-    set laststatus=2                            " When to use a status line for the last window
-    set statusline=%(%F%m%r%h%w\%)%=%([TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]%)
+   set laststatus=2                            " When to use a Status line for the last window
+   source ~/.vim/after/plugins/statusline.vim
+
       set winwidth=84                             " Basically, all non-focused windows shrink down to ..
-      set winheight=5                             " .. five lines and the focused window takes up ..
-      set winminheight=5                          " .. everything that's left (so the focused window ..
+      set winheight=10                            " .. five lines and the focused window takes up ..
+      set winminheight=10                         " .. everything that's left (so the focused window ..
       set winheight=999                           " .. has at least 84 columns, the others shrink to accomodate).
     set hidden                                  " Don't unload a buffer when no longer shown in a window.
     set splitbelow                              " Open new windows under the current one ..
@@ -154,6 +147,9 @@
 " ------------------------------------------------------------------------
   " -v-2 Mappings
   " ----------------------------------------------------------------------
+    " -v-3 Leader key settings
+    " --------------------------------------------------------------------
+      let mapleader = "\<space>"
 
     " -v-3 Personal mappings
     " --------------------------------------------------------------------
@@ -244,12 +240,6 @@
 
   " -v-2 Auto-commands
   " ----------------------------------------------------------------------
-    " -v-3 Source .vimrc after saving it
-    " --------------------------------------------------------------------
-      if has("autocmd")
-        autocmd bufwritepost .vimrc source $MYVIMRC
-      endif
-
     " -v-3 Toggle between relative and absolute line numbers
     " --------------------------------------------------------------------
       function! g:ToggleNuMode()
@@ -261,7 +251,6 @@
       endfunc
 
       nnoremap <f5> :call g:ToggleNuMode()<cr>
-
 
     " -v-3 Only highlight the current line and 80th column of the currently active window
     " --------------------------------------------------------------------
