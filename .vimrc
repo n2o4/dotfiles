@@ -170,8 +170,10 @@
 
     " -v-3 Navigation remaps
     " --------------------------------------------------------------------
-      "nnoremap <tab> %                         " Match bracket pairs with <tab>-key because it's ..
-      "vnoremap <tab> %                         " .. easier to type than %.
+    
+      " Match bracket pairs with <tab>
+      nnoremap <tab> %
+      vnoremap <tab> %
 
       " Insert \v before any string that is searched for.
       " This turns off Vim's own regex and resorts to normal regexes instead.
