@@ -4,54 +4,10 @@
     set nocompatible                            " No vi-compatibility
     filetype off
 
-" -v-1 Vundle
-" ------------------------------------------------------------------------
-    set rtp+=~/.vim/bundle/vundle/
-    call vundle#rc()
-    " let Vundle manage Vundle
-    " required! 
-    Bundle 'gmarik/vundle'
-
-  " -v-2 My bundles
-  " ----------------------------------------------------------------------
-      Bundle 'tpope/vim-fugitive'
-      Bundle 'tpope/vim-unimpaired'
-      Bundle 'gregsexton/gitv'
-      Bundle 'jamessan/vim-gnupg'
-      Bundle 'zeekay/vim-lawrencium'
-      Bundle 'mhinz/vim-signify'
-      Bundle 'mattn/webapi-vim'
-      Bundle 'mattn/gist-vim'
-      Bundle 'kana/vim-smartinput'
-      Bundle 'Lokaltog/vim-powerline'
-
-      filetype plugin indent on                 " Set type of file
-
-    " -v-3 Vim-signify
-    " --------------------------------------------------------------------
-        let g:signify_sign_overwrite = 1
-
-        let g:signify_mapping_next_hunk = '<leader>gn'
-        let g:signify_mapping_prev_hunk = '<leader>gp'
-
-        let g:signify_mapping_toggle_higlight = '<leader>gh'
-        let g:signify_mapping_toggle = '<leader>gt'
-
-    " -v-3 Powerline
-    " --------------------------------------------------------------------
-        let g:Powerline_symbols = 'unicode'
-
-    " -v-3 gist-vim
-    " --------------------------------------------------------------------
-        let g:gist_detect_filetype = 1
-        let g:gist_open_browser_after_post = 1
-        let g:gist_browser_command = 'dwb %URL% &'
-        let g:gist_show_privates = 1
-        let g:gist_post_private = 1
+    source ~/.vim/vundle.vim
 
 " -v-1 Moving around, searching and patterns
 " ------------------------------------------------------------------------
-    imap jj <Esc>
     set autochdir                               " Change to directory of file in buffer
     set incsearch                               " Show match for party typed search command
     set ignorecase                              " Ignore case when using a search pattern
@@ -159,6 +115,8 @@
 
     " -v-3 Personal mappings
     " --------------------------------------------------------------------
+      imap jj <Esc>
+
       " Quickly toggle 'set list'
       nmap <leader>l :set list!<cr>
 
@@ -176,7 +134,6 @@
 
     " -v-3 Navigation remaps
     " --------------------------------------------------------------------
-    
       " Match bracket pairs with <tab>
       nnoremap <tab> %
       vnoremap <tab> %
@@ -225,26 +182,6 @@
       nnoremap <leader>cf :cfirst<cr>
       nnoremap <leader>cl :clast<cr>
       nnoremap <leader>CC :cclose<cr>
-
-    " -v-3 dmenu file searching
-    " http://leafo.net/posts/using_dmenu_to_open_quickly.html
-    " --------------------------------------------------------------------
-      " Strip the newline from the end of a string
-      function! Chomp(str)
-        return substitute(a:str, '\n$', '', '')
-      endfunction
-
-      " Find a file and pass it to cmd
-      function! DmenuOpen(cmd)
-        let fname = Chomp(system("git ls-files | dmenu -i -l 20 -p " . a:cmd))
-        if empty(fname)
-          return
-        endif
-        execute a:cmd . " " . fname
-      endfunction
-
-      map <leader>dt :call DmenuOpen("tabe")<cr>
-      map <leader>de :call DmenuOpen("e")<cr>
 
   " -v-2 Auto-commands
   " ----------------------------------------------------------------------
