@@ -23,6 +23,7 @@
       Bundle 'mattn/webapi-vim'
       Bundle 'mattn/gist-vim'
       Bundle 'kana/vim-smartinput'
+      Bundle 'Lokaltog/vim-powerline'
 
       filetype plugin indent on                 " Set type of file
 
@@ -35,6 +36,10 @@
 
         let g:signify_mapping_toggle_higlight = '<leader>gh'
         let g:signify_mapping_toggle = '<leader>gt'
+
+    " -v-3 Powerline
+    " --------------------------------------------------------------------
+        let g:Powerline_symbols = 'unicode'
 
     " -v-3 gist-vim
     " --------------------------------------------------------------------
@@ -55,6 +60,7 @@
 " -v-1 Displaying text
 " ------------------------------------------------------------------------
     syntax on                                   " Set syntax highlighting on
+    set scrolloff=20                            " Number of screen lines to show around the cursor
     set nowrap                                  " Long lines don't wrap
     set fillchars=vert:\|,fold:-
     set listchars=tab:▸\ ,eol:¬                 " List of strings used for list mode
@@ -77,7 +83,6 @@
 " -v-1 Multiple windows
 " ------------------------------------------------------------------------
    set laststatus=2                            " When to use a Status line for the last window
-   source ~/.vim/after/plugins/statusline.vim
 
       set winwidth=84                             " Basically, all non-focused windows shrink down to ..
       set winheight=10                            " .. five lines and the focused window takes up ..
@@ -100,6 +105,7 @@
 " ------------------------------------------------------------------------
     set shortmess+=Ia                           " List of flags to make messages shorter
     set showcmd                                 " Show (partial) command keys in the status line
+    set noshowmode
     set ruler                                   " Show cursor position below each window
     set confirm                                 " Start a dialog when a command fails
     set noerrorbells                            " No ringing the bell for error messages
