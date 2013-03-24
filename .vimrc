@@ -214,4 +214,9 @@
     " --------------------------------------------------------------------
       autocmd BufReadPost fugitive://* set bufhidden=delete
 
+    " -v-3 Remove temporary startup kludges
+    " http://superuser.com/questions/553601/vim-has-unexpected-key-presses-on-startup-what-could-be-causing-this
+    " --------------------------------------------------------------------
+      set t_RV= ttymouse=xterm2
+
 " vim: set fmr=-v-,-^- fdm=marker cms="%s" et ts=2 sw=2 sts=2 :
