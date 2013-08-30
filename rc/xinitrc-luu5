@@ -1,0 +1,33 @@
+#!/bin/bash
+## Laptop-specific .xinitrc
+
+# Start upower for power management
+upower -e &
+
+# Start mpd & mpdscribble
+mpd &
+#&& mpdscribble &
+
+# load .Xresources
+urxvtd -q -o -f &
+xrdb -merge ~/.Xresources &
+
+# Switch between Finnish and US keyboard layouts with scroll lock and
+# remap caps lock to work as control-key.
+setxkbmap -layout "fi, us" -option "grp:sclk_toggle,grp_led:scroll,ctrl:nocaps" &
+
+autolocker &
+
+# Emulatewheel (third mouse button+trackpoint scrolling)
+xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 8 1 &
+xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 8 2 &
+xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 8 6 7 4 5 &
+
+# Start GPG-agent
+eval $(gpg-agent --daemon) &
+
+# Set DWM wallpaper
+eval `cat ~/.fehbg`
+
+# Window manager
+exec startdwm

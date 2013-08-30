@@ -1,0 +1,65 @@
+URxvt*termName:                 rxvt-256color
+URxvt*transparent:              false
+URxvt*shading:                  5
+
+URxvt.scrollBar:                off
+URxvt.font:                     -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
+URxvt.perl-lib:                 /home/n2o4/code/urxvt-perls/
+URxvt.perl-ext-common:          default,matcher,url-picker
+URxvt.keysym.C-0xff0d:          perl:url-picker
+URxvt.urlLauncher:              /usr/bin/x-www-browser
+URxvt.matcher.button:           2
+URxvt.perl-ext:                 default,url-select
+URxvt.keysym.M-u:               perl:url-select:select_next
+URxvt.underlineURLs:            true
+URxvt*urgentOnBell:             true
+Xterm*bellsUrgent:              true
+
+! Tomorrow-Night Palette
+#define t_background #1D1F21
+#define t_current_line #282A2E
+#define t_selection #373B41
+#define t_foreground #C5C8C6
+!#define t_comment #707880
+#define t_comment #969896
+#define t_red #CC6666
+#define t_orange #DE935F
+#define t_yellow #F0C674
+#define t_green #B5BD68
+#define t_aqua #8ABEB7
+#define t_blue #81A2BE
+#define t_purple #B294BB
+
+*fading:                        30
+*fadeColor:                     t_background
+
+! terminal colours
+URxvt*background:               t_background
+URxvt*foreground:               t_comment
+! black
+URxvt*color0:                   t_current_line
+URxvt*color8:                   t_selection
+! red
+URxvt*color1:                   #A54242
+URxvt*color9:                   t_red
+! green
+URxvt*color2:                   #8C9440
+URxvt*color10:                  t_green
+! yellow
+URxvt*color3:                   t_orange
+URxvt*color11:                  t_yellow
+! blue
+URxvt*color4:                   #5F819D
+URxvt*color12:                  t_blue
+! magenta
+URxvt*color5:                   #85678F
+URxvt*color13:                  t_purple
+! cyan
+URxvt*color6:                   #5E8D87
+URxvt*color14:                  t_aqua
+! white
+URxvt*color7:                   t_comment
+URxvt*color15:                  t_foreground
+
+URxvt.colorUL:                  #86a2be
+URxvt.underlineColor:           #3465A4
