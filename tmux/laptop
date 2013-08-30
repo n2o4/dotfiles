@@ -1,0 +1,12 @@
+new -s laptop -n ncmpcpp ncmpcpp
+neww -t 2 -n slrn-es "slrn -i .news/offline/e-s/slrn.rc"
+neww -t 3 -n slrn-gmane "slrn -h news.gmane.org"
+neww -t 4 -n mutt mutt
+neww -t 5 -n rtorrent rtorrent
+neww -t 6 -n cortex cortex
+
+set-window-option -t:1 monitor-activity off
+set-window-option -t:2 monitor-activity off
+set-window-option -t:3 monitor-activity off
+set-window-option -t:5 monitor-activity off
+set-window-option -t:6 monitor-activity off
